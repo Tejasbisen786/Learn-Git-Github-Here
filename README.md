@@ -74,41 +74,41 @@ instead for any new feature make a new branch and after finalized features merge
 
 <h2> Github Most Common issue</h2>
 
-# Steps to change github branch default from master to main  
- # Step 1 
-# create main branch locally, taking the history from master
+-  Steps to change github branch default from master to main  
+ Step 1 
+- create main branch locally, taking the history from master
 git branch -m master main
 
-# Step 2 
-# push the new local main branch to the remote repo (GitHub) 
+ - Step 2 
+ push the new local main branch to the remote repo (GitHub) 
 git push -u origin main
 
-# Step 3
-# switch the current HEAD to the main branch
+- Step 3
+ switch the current HEAD to the main branch
 git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
 
-# Step 4
-# change the default branch on GitHub to main
-# https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch
+-  Step 4
+ -change the default branch on GitHub to main
+ - https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch
 
-# Step 5
-# delete the master branch on the remote
+- Step 5
+-  delete the master branch on the remote
 git push origin --delete master
 
 # While pushing fetch refs couldn't find issue [Fetch issue]
 - try this code : <br>
-# git fetch origin main:tmp
-# git rebase tmp
-# git push origin HEAD:main
-# git branch -D tmp
-# git push -u origin main
+- git fetch origin main:tmp
+- git rebase tmp
+- git push origin HEAD:main
+- git branch -D tmp
+- git push -u origin main
 
 <h2> Quick Git Setup Command </h2>
 
-# echo "# task2" >> README.md
-# git init
-# git add README.md
-# git commit -m "first commit"
-# git branch -M main
-# git remote add origin git@github.com:tusharbisen/task2.git
-# git push -u origin main
+- echo "# task2" >> README.md
+- git init
+- git add README.md
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin git@github.com:tusharbisen/task2.git
+- git push -u origin main
