@@ -42,11 +42,11 @@ git merge <> : merging new feature into default  <br>
 from where you're forked url called upsteam: 
 git add remote upstream < repo url >:  
 * balancing upstream and fork changed constant *
-ex:
-git cheackout master:
-git fetch -all --prune 
-git reset --hard upstream/main
-git push origin main 
+ex: <br>
+git cheackout master: <br>
+git fetch -all --prune  <br>
+git reset --hard upstream/main <br>
+git push origin main  <br>
 <br>
 or 
 git pull upstream main 
@@ -71,3 +71,44 @@ instead for any new feature make a new branch and after finalized features merge
 <br>
 ** Mostly Project deployed using main brach it means the main branch in on the production" 
 <br>
+
+<h2> Github Most Common issue</h2>
+
+# Steps to change github branch default from master to main  
+ # Step 1 
+# create main branch locally, taking the history from master
+git branch -m master main
+
+# Step 2 
+# push the new local main branch to the remote repo (GitHub) 
+git push -u origin main
+
+# Step 3
+# switch the current HEAD to the main branch
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+
+# Step 4
+# change the default branch on GitHub to main
+# https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch
+
+# Step 5
+# delete the master branch on the remote
+git push origin --delete master
+
+# While pushing fetch refs couldn't find issue [Fetch issue]
+- try this code : <br>
+# git fetch origin main:tmp
+# git rebase tmp
+# git push origin HEAD:main
+# git branch -D tmp
+# git push -u origin main
+
+<h2> Quick Git Setup Command </h2>
+
+# echo "# task2" >> README.md
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git branch -M main
+# git remote add origin git@github.com:tusharbisen/task2.git
+# git push -u origin main
