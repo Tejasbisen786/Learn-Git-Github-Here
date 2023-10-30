@@ -74,7 +74,7 @@ instead for any new feature make a new branch and after finalized features merge
 
 <h2> Github Most Common issue</h2>
 
--  Steps to change github branch default from master to main  
+  <h5> Steps to change github branch default from master to main  </h5>
  Step 1 
 - create main branch locally, taking the history from master
 git branch -m master main
